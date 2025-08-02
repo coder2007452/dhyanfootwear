@@ -16,20 +16,20 @@ const Navbar = () => {
       <Image
         className="cursor-pointer w-28 md:w-32"
         onClick={() => router.push('/')}
-        src={assets.logo}
+        src={assets.logo1}
         alt="logo"
       />
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
         <Link href="/" className="hover:text-gray-900 transition">
           Home
         </Link>
+        <Link href="/about" className="hover:text-gray-900 transition">
+          About Us
+        </Link>
         <Link href="/all-products" className="hover:text-gray-900 transition">
           Shop
         </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          About Us
-        </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
+        <Link href="/contact" className="hover:text-gray-900 transition">
           Contact
         </Link>
 
