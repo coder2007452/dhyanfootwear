@@ -29,7 +29,6 @@ export async function POST(request) {
                 items,
                 amount: amount + Math.floor(amount * 0.02), // 10% tax
                 date: Date.now(),
-                paymentType: 'COD'
             }
         })
 
