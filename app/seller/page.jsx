@@ -13,7 +13,7 @@ const AddProduct = () => {
   const [files, setFiles] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('Earphone');
+  const [category, setCategory] = useState('1,2,3');
   const [price, setPrice] = useState('');
   const [offerPrice, setOfferPrice] = useState('');
 
@@ -35,17 +35,17 @@ const AddProduct = () => {
     try {
       const token = await getToken()
 
-      const { data } = await axios.post('/api/product/add', formData, { headers: {Authorization: `Bearer ${token}` }})
+      const { data } = await axios.post('/api/product/add', formData, { headers: { Authorization: `Bearer ${token}` } })
 
       if (data.success) {
         toast.success(data.message)
         setFiles([]);
         setName('');
         setDescription('');
-        setCategory('Earphone');
+        setCategory('1,2,3');
         setPrice('');
         setOfferPrice('');
-      }else{
+      } else {
         toast.error(data.message);
       }
 
@@ -114,25 +114,6 @@ const AddProduct = () => {
         </div>
         <div className="flex items-center gap-5 flex-wrap">
           <div className="flex flex-col gap-1 w-32">
-            <label className="text-base font-medium" htmlFor="category">
-              Category
-            </label>
-            <select
-              id="category"
-              className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40"
-              onChange={(e) => setCategory(e.target.value)}
-              defaultValue={category}
-            >
-              <option value="Earphone">Earphone</option>
-              <option value="Headphone">Headphone</option>
-              <option value="Watch">Watch</option>
-              <option value="Smartphone">Smartphone</option>
-              <option value="Laptop">Laptop</option>
-              <option value="Camera">Camera</option>
-              <option value="Accessories">Accessories</option>
-            </select>
-          </div>
-          <div className="flex flex-col gap-1 w-32">
             <label className="text-base font-medium" htmlFor="product-price">
               Product Price
             </label>
@@ -157,6 +138,20 @@ const AddProduct = () => {
               className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40"
               onChange={(e) => setOfferPrice(e.target.value)}
               value={offerPrice}
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-1 w-50">
+            <label className="text-base font-medium" htmlFor="category">
+              Category
+            </label>
+            <textarea
+              id="category"
+              rows={3}
+              className="outline-none h-10 md:py-2.5 py-2 px-3 rounded border border-gray-500/40 resize-none"
+              placeholder="e.g., 1,2,3"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
               required
             />
           </div>
