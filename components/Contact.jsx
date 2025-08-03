@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen px-6 py-8 mb-[-250] bg-white text-gray-800">
+    <div className="min-h-screen px-6 py-8 mb-[-200] bg-white text-gray-800">
       {/* ⬆ Changed from py-16 to py-8 */}
       <div className="max-w-xl mx-auto">
         <h1 className="text-3xl font-bold text-orange-600 mb-6 text-center">
