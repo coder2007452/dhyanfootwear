@@ -13,14 +13,17 @@ import React from "react";
 const Product = () => {
 
     const { id } = useParams();
-
     const { products, router, addToCart } = useAppContext()
+
+    const [size, setSize] = useState('');
 
     const [mainImage, setMainImage] = useState(null);
     const [productData, setProductData] = useState(null);
 
+    const sizesArray = productData?.sizes ? JSON.parse(productData.sizes) : [];
+
     const fetchProductData = async () => {
-        const product = products.find(product => product._id === id);
+        const product = products.find(product => product._id.toString() === id);
         setProductData(product);
     }
 
@@ -96,20 +99,36 @@ const Product = () => {
                             <tbody>
                                 <tr>
                                     <td className="text-gray-600 font-medium">Brand</td>
-                                    <td className="text-gray-800/50 ">Generic</td>
+                                    <td className="text-gray-800/50">Generic</td>
                                 </tr>
                                 <tr>
                                     <td className="text-gray-600 font-medium">Color</td>
-                                    <td className="text-gray-800/50 ">Multi</td>
+                                    <td className="text-gray-800/50">Multi</td>
                                 </tr>
                                 <tr>
                                     <td className="text-gray-600 font-medium">Category</td>
-                                    <td className="text-gray-800/50">
-                                        {productData.category}
-                                    </td>
+                                    <td className="text-gray-800/50">{productData.category}</td>
+                                </tr>
+                                <tr>
+                                    <td className="text-gray-600 font-medium">Subcategory</td>
+                                    <td className="text-gray-800/50">{productData.subCategory}</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div className="flex gap-2 mt-5">
+                        {["S", "M", "L", "XL", "XXL"]
+                            .filter(s => sizesArray.includes(s)) // Only keep available sizes
+                            .map(s => (
+                                <button
+                                    key={s}
+                                    onClick={() => setSize(s)}
+                                    className={`border border-gray-200 py-2 px-4 bg-gray-100 ${size === s ? "border-orange-500" : ""}`}
+                                >
+                                    {s}
+                                </button>
+                            ))
+                        }
                     </div>
 
                     <div className="flex items-center mt-10 gap-4">

@@ -10,6 +10,22 @@ import toast from "react-hot-toast";
 
 const ProductList = () => {
 
+  const removeProduct = async (id) => {
+    try {
+      const response = await axios.post(backendUrl + '/api/product/remove', { id }, { headers: { token } })
+      if (response.data.success) {
+        toast.success(response.data.message)
+        await fetchList();
+      }
+      else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message)
+    }
+  }
+
   const { router, getToken, user } = useAppContext()
 
   const [products, setProducts] = useState([])
