@@ -208,7 +208,7 @@ const AddProduct = () => {
         </div>
         <div>
           <p className='mb-2'>Sizes</p>
-          <div className='flex gap-3'>
+          <div className='flex gap-3 grid grid-cols-5 sm:grid-cols-8 gap-2'>
             <div onClick={() => setSizes(prev => prev.includes("1") ? prev.filter(item => item !== "1") : [...prev, "1"])}>
               <p className={`${sizes.includes("1") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>1</p>
             </div>
