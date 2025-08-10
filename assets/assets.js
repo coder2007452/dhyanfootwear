@@ -7,6 +7,15 @@ import logo1 from "./1.jpg";
 import order_icon from "./order_icon.svg";
 import instagram_icon from "./instagram_icon.svg";
 import facebook_icon from "./facebook_icon.svg";
+import flite from "./flite.jpg";
+import bata from "./bata.jpg";
+import vkc from "./vkc.jpg";
+import walk from "./walk.jpg";
+import action from "./action.jpg";
+import para from "./para.jpg";
+import campus from "./campus.jpg";
+import hit from "./hit.jpg";
+import otho from "./otho.jpg";
 import twitter_icon from "./twitter_icon.svg";
 import box_icon from "./box_icon.svg";
 import product_list_icon from "./product_list_icon.svg";
@@ -50,6 +59,15 @@ import product_details_page_apple_earphone_image5 from "./product_details_page_a
 
 export const assets = {
   logo,
+  flite,
+  bata,
+  vkc,
+  para,
+  walk,
+  action,
+  campus,
+  hit,
+  otho,
   logo1,
   search_icon,
   user_icon,

@@ -6,6 +6,7 @@ import Banner from "@/components/Banner";
 import FeaturedProduct from "@/components/FeaturedProduct";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BrandSlider from "@/components/BrandSlider";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <HomeProducts />
         <FeaturedProduct />
         <Banner />
+        <BrandSlider/>
       </div>
       <Footer />
     </>

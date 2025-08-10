@@ -16,10 +16,13 @@ export async function POST(request) {
         }
 
         //calculate amount using items
-        const amount = await items.reduce(async (acc, item) => {
-            const product = await Product.findById(item.product);
-            return await acc + product.offerPrice * item.quantity;
-        }, 0)
+        const amount = await Promise.all(
+            items.map(async (item) => {
+                const product = await Product.findById(item.product);
+                if (!product) return 0; // skip if not found
+                return (product.offerPrice || 0) * (item.quantity || 0);
+            })
+        ).then(values => values.reduce((sum, val) => sum + val, 0));
 
         await inngest.send({
             name: 'order/created',

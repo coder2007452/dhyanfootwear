@@ -70,20 +70,6 @@ const Product = () => {
                     <h1 className="text-3xl font-medium text-gray-800/90 mb-4">
                         {productData.name}
                     </h1>
-                    <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-0.5">
-                            <Image className="h-4 w-4" src={assets.star_icon} alt="star_icon" />
-                            <Image className="h-4 w-4" src={assets.star_icon} alt="star_icon" />
-                            <Image className="h-4 w-4" src={assets.star_icon} alt="star_icon" />
-                            <Image className="h-4 w-4" src={assets.star_icon} alt="star_icon" />
-                            <Image
-                                className="h-4 w-4"
-                                src={assets.star_dull_icon}
-                                alt="star_dull_icon"
-                            />
-                        </div>
-                        <p>(4.5)</p>
-                    </div>
                     <p className="text-gray-600 mt-3">
                         {productData.description}
                     </p>
@@ -98,14 +84,6 @@ const Product = () => {
                         <table className="table-auto border-collapse w-full max-w-72">
                             <tbody>
                                 <tr>
-                                    <td className="text-gray-600 font-medium">Brand</td>
-                                    <td className="text-gray-800/50">Generic</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-gray-600 font-medium">Color</td>
-                                    <td className="text-gray-800/50">Multi</td>
-                                </tr>
-                                <tr>
                                     <td className="text-gray-600 font-medium">Category</td>
                                     <td className="text-gray-800/50">{productData.category}</td>
                                 </tr>
@@ -117,7 +95,9 @@ const Product = () => {
                         </table>
                     </div>
                     <div className="flex gap-2 mt-5">
-                        {["S", "M", "L", "XL", "XXL"]
+                        <p className="text-gray-600 font-medium">Select Sizes</p>
+                        <br />
+                        {["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
                             .filter(s => sizesArray.includes(s)) // Only keep available sizes
                             .map(s => (
                                 <button

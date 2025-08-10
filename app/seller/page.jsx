@@ -14,7 +14,7 @@ const AddProduct = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState("Men");
-  const [subCategory, setSubCategory] = useState("Topwear");
+  const [subCategory, setSubCategory] = useState("Shoes");
   const [sizes, setSizes] = useState([]);
   const [offerPrice, setOfferPrice] = useState('');
 
@@ -190,9 +190,17 @@ const AddProduct = () => {
                 value={subCategory}
                 className="border border-gray-300 w-full px-3 py-2"
               >
-                <option value="Topwear">Topwear</option>
-                <option value="Bottomwear">Bottomwear</option>
-                <option value="Winterwear">Winterwear</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Slippers">Slippers</option>
+                <option value="Formal">Formal</option>
+                <option value="Sandal">Sandal</option>
+                <option value="Chappal">Chappal</option>
+                <option value="Flip-flop">Flip Flop</option>
+                <option value="Loafers">Loafers</option>
+                <option value="Heels">Heels</option>
+                <option value="Flats">Flats</option>
+                <option value="Everyday-wear">Everyday Wear</option>
+                <option value="Office-wear">Office Wear</option>
               </select>
             </div>
           </div>
@@ -201,24 +209,84 @@ const AddProduct = () => {
         <div>
           <p className='mb-2'>Sizes</p>
           <div className='flex gap-3'>
-            <div onClick={() => setSizes(prev => prev.includes("S") ? prev.filter(item => item !== "S") : [...prev, "S"])}>
-              <p className={`${sizes.includes("S") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>S</p>
+            <div onClick={() => setSizes(prev => prev.includes("1") ? prev.filter(item => item !== "1") : [...prev, "1"])}>
+              <p className={`${sizes.includes("1") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>1</p>
             </div>
 
-            <div onClick={() => setSizes(prev => prev.includes("M") ? prev.filter(item => item !== "M") : [...prev, "M"])}>
-              <p className={`${sizes.includes("M") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>M</p>
+            <div onClick={() => setSizes(prev => prev.includes("2") ? prev.filter(item => item !== "2") : [...prev, "2"])}>
+              <p className={`${sizes.includes("2") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>2</p>
             </div>
 
-            <div onClick={() => setSizes(prev => prev.includes("L") ? prev.filter(item => item !== "L") : [...prev, "L"])}>
-              <p className={`${sizes.includes("L") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>L</p>
+            <div onClick={() => setSizes(prev => prev.includes("3") ? prev.filter(item => item !== "3") : [...prev, "3"])}>
+              <p className={`${sizes.includes("3") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>3</p>
             </div>
 
-            <div onClick={() => setSizes(prev => prev.includes("XL") ? prev.filter(item => item !== "XL") : [...prev, "XL"])}>
-              <p className={`${sizes.includes("XL") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>XL</p>
+            <div onClick={() => setSizes(prev => prev.includes("4") ? prev.filter(item => item !== "4") : [...prev, "4"])}>
+              <p className={`${sizes.includes("4") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>4</p>
             </div>
 
-            <div onClick={() => setSizes(prev => prev.includes("XXL") ? prev.filter(item => item !== "XXL") : [...prev, "XXL"])}>
-              <p className={`${sizes.includes("XXL") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>XXL</p>
+            <div onClick={() => setSizes(prev => prev.includes("5") ? prev.filter(item => item !== "5") : [...prev, "5"])}>
+              <p className={`${sizes.includes("5") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>5</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("6") ? prev.filter(item => item !== "6") : [...prev, "6"])}>
+              <p className={`${sizes.includes("6") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>6</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("7") ? prev.filter(item => item !== "7") : [...prev, "7"])}>
+              <p className={`${sizes.includes("7") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>7</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("8") ? prev.filter(item => item !== "8") : [...prev, "8"])}>
+              <p className={`${sizes.includes("8") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>8</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("9") ? prev.filter(item => item !== "9") : [...prev, "9"])}>
+              <p className={`${sizes.includes("9") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>9</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("10") ? prev.filter(item => item !== "10") : [...prev, "10"])}>
+              <p className={`${sizes.includes("10") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>10</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("11") ? prev.filter(item => item !== "11") : [...prev, "11"])}>
+              <p className={`${sizes.includes("11") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>11</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("12") ? prev.filter(item => item !== "12") : [...prev, "12"])}>
+              <p className={`${sizes.includes("12") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>12</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("13") ? prev.filter(item => item !== "13") : [...prev, "13"])}>
+              <p className={`${sizes.includes("13") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>13</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("14") ? prev.filter(item => item !== "14") : [...prev, "14"])}>
+              <p className={`${sizes.includes("14") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>14</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("15") ? prev.filter(item => item !== "15") : [...prev, "15"])}>
+              <p className={`${sizes.includes("15") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>15</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("16") ? prev.filter(item => item !== "16") : [...prev, "16"])}>
+              <p className={`${sizes.includes("16") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>16</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("17") ? prev.filter(item => item !== "17") : [...prev, "17"])}>
+              <p className={`${sizes.includes("17") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>17</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("18") ? prev.filter(item => item !== "18") : [...prev, "18"])}>
+              <p className={`${sizes.includes("18") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>18</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("19") ? prev.filter(item => item !== "19") : [...prev, "19"])}>
+              <p className={`${sizes.includes("19") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>19</p>
+            </div>
+
+            <div onClick={() => setSizes(prev => prev.includes("20") ? prev.filter(item => item !== "20") : [...prev, "20"])}>
+              <p className={`${sizes.includes("20") ? 'bg-red-100' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>20</p>
             </div>
           </div>
         </div>

@@ -30,6 +30,7 @@ export async function POST(request) {
         const category = formData.get('category');
         const subCategory = formData.get('subCategory');
         const sizes = formData.get('sizes');
+        const brand = formData.get('brand');
         const price = formData.get('price');
         const offerPrice = formData.get('offerPrice');
 
@@ -70,6 +71,7 @@ export async function POST(request) {
             category,
             subCategory,
             sizes,
+            brand,
             price: Number(price),
             offerPrice: Number(offerPrice),
             image,

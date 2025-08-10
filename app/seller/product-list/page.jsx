@@ -12,19 +12,27 @@ const ProductList = () => {
 
   const removeProduct = async (id) => {
     try {
-      const response = await axios.post(backendUrl + '/api/product/remove', { id }, { headers: { token } })
+      const token = await getToken();
+
+      const response = await axios.delete("/api/product/remove", {
+        data: { id },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+      });
+
       if (response.data.success) {
-        toast.success(response.data.message)
-        await fetchList();
-      }
-      else {
-        toast.error(response.data.message)
+        toast.success(response.data.message);
+        setProducts((prev) => prev.filter((p) => p._id !== id)); // remove from UI
+      } else {
+        toast.error(response.data.message);
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.message)
+      toast.error(error.message);
     }
-  }
+  };
 
   const { router, getToken, user } = useAppContext()
 
@@ -92,13 +100,11 @@ const ProductList = () => {
                   <td className="px-4 py-3 max-sm:hidden">{product.category}</td>
                   <td className="px-4 py-3">₹{product.offerPrice}</td>
                   <td className="px-4 py-3 max-sm:hidden">
-                    <button onClick={() => router.push(`/product/${product._id}`)} className="flex items-center gap-1 px-1.5 md:px-3.5 py-2 bg-orange-600 text-white rounded-md">
-                      <span className="hidden md:block">Visit</span>
-                      <Image
-                        className="h-3.5"
-                        src={assets.redirect_icon}
-                        alt="redirect_icon"
-                      />
+                    <button
+                      onClick={() => removeProduct(product._id)}
+                      className="bg-red-600 text-white px-3 py-1 rounded-md"
+                    >
+                      Delete
                     </button>
                   </td>
                 </tr>

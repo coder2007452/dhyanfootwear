@@ -120,15 +120,20 @@ export const AppContextProvider = (props) => {
     }
 
     const getCartAmount = () => {
-        let totalAmount = 0;
-        for (const items in cartItems) {
-            let itemInfo = products.find((product) => product._id === items);
-            if (cartItems[items] > 0) {
-                totalAmount += itemInfo.offerPrice * cartItems[items];
-            }
-        }
-        return Math.floor(totalAmount * 100) / 100;
+    let totalAmount = 0;
+
+    for (const itemId in cartItems) {
+        if (cartItems[itemId] <= 0) continue; // skip if quantity is 0
+
+        const itemInfo = products.find(product => String(product._id) === String(itemId));
+
+        // ✅ Optional chaining prevents "Cannot read properties of undefined"
+        totalAmount += (itemInfo?.offerPrice || 0) * cartItems[itemId];
     }
+
+    return Math.round(totalAmount * 100) / 100; // round to 2 decimals
+};
+
 
     useEffect(() => {
         fetchProductData()
