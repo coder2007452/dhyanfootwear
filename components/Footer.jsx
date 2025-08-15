@@ -1,6 +1,8 @@
 import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import Link from "next/link";
+
 
 const Footer = () => {
   return (
@@ -42,6 +44,18 @@ const Footer = () => {
             <div className="text-sm space-y-2">
               <p>+91 9033674735</p>
               <p>dhyanfootwear1973@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-1/2 flex items-start justify-start md:justify-center">
+          <div>
+            <h2 className="font-medium text-gray-900 mb-5">Policy</h2>
+            <div className="text-sm space-y-2">
+              <Link href="/privacy-policy"><p>Privacy Policy</p></Link>
+              <p>Terms And Conditions</p>
+              <p>Return Policy</p>
+              <p>Delivery Policy</p>
             </div>
           </div>
         </div>

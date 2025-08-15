@@ -97,6 +97,7 @@ const Product = () => {
                     <div className="flex gap-2 mt-5">
                         <p className="text-gray-600 font-medium">Select Sizes</p>
                         <br />
+                        <div className="grid grid-cols-5 sm:grid-cols-8 gap-2">
                         {["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
                             .filter(s => sizesArray.includes(s)) // Only keep available sizes
                             .map(s => (
@@ -109,12 +110,13 @@ const Product = () => {
                                 </button>
                             ))
                         }
+                        </div>
                     </div>
 
                     <div className="flex items-center mt-10 gap-4">
-                        <button onClick={() => addToCart(productData._id)} className="w-full py-3.5 bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition">
+                        {/* <button onClick={() => addToCart(productData._id)} className="w-full py-3.5 bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition">
                             Add to Cart
-                        </button>
+                        </button> */}
                         <button onClick={() => { addToCart(productData._id); router.push('/cart') }} className="w-full py-3.5 bg-orange-500 text-white hover:bg-orange-600 transition">
                             Buy now
                         </button>
