@@ -53,9 +53,9 @@ const Footer = () => {
             <h2 className="font-medium text-gray-900 mb-5">Policy</h2>
             <div className="text-sm space-y-2">
               <Link href="/privacy-policy"><p>Privacy Policy</p></Link>
-              <p>Terms And Conditions</p>
-              <p>Return Policy</p>
-              <p>Delivery Policy</p>
+              <Link href="">Terms And Conditions</Link><br />
+              <Link href="/return-policy">Return Policy</Link><br />
+              <Link href="">Delivery Policy</Link>
             </div>
           </div>
         </div>
