@@ -11,14 +11,14 @@ import BrandSlider from "@/components/BrandSlider";
 const Home = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="px-6 md:px-16 lg:px-32">
         <HeaderSlider />
-        <BrandSlider/>
+        <BrandSlider />
         <HomeProducts />
         <FeaturedProduct />
         <Banner />
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
